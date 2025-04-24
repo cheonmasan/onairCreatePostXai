@@ -1,0 +1,28 @@
+api/xaiClient.js
+api/activekingPrompt.js
+api/kboPrompt.js
+api/kboWeatherPrompt.js
+api/roulettePrompt.js
+api/weatherPrompt.js
+api/youtubePrompt.js
+db/database.js
+scheduler/uploadLoop.js
+scraping/kboScraper.js
+scraping/weatherScraper.js
+upload/uploader.js
+utils/timeUtils.js
+utils/userUtils.js
+index.html
+main.js
+preload.js
+
+야구: KBO 경기 소식, 팀 응원 (현재 구현)
+날씨: 지역 날씨, 기온/조건 기반 대화 (현재 구현)
+야구와 날씨 조합: 경기와 날씨 결합 (현재 구현)
+룰렛 이벤트: 커뮤니티 룰렛 이벤트 안내, 참여 유도 (현재 구현)
+슬롯 리뷰: 슬롯 게임 후기, 재미 요소 공유
+잭팟 비디오: 잭팟 순간 영상 소개, 시청 유도
+활동왕 찾기: 커뮤니티 내 활발한 사용자 응원, 이벤트 참여 (현재 구현)
+게임 팁 공유: 슬롯/룰렛 등 게임 전략, 꿀팁 공유
+유머와 밈: 재미있는 밈/유머 콘텐츠로 분위기 띄우기
+유튜브: 실시간 스트리밍 이벤트 홍보 (현재 구현)

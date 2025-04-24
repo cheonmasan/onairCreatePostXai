@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Community Post Uploader</title>
+</head>
+<body>
+    <h1>Community Post Uploader</h1>
+    <div>
+        <h2>User ID</h2>
+        <pre id="userId"></pre>
+    </div>
+    <button onclick="startUpload()">Start Upload</button>
+    <button onclick="stopUpload()">Stop Upload</button>
+    <div>
+        <h2>Status</h2>
+        <pre id="status"></pre>
+    </div>
+    <script>
+        async function startUpload() {
+            await window.electronAPI.startUpload();
+        }
+
+        async function stopUpload() {
+            await window.electronAPI.stopUpload();
+        }
+
+        window.electronAPI.onUpdateStatus((value) => {
+            const statusElement = document.getElementById('status');
+            statusElement.textContent += value + '\n';
+            statusElement.scrollTop = statusElement.scrollHeight;
+
+            if (value.includes('DB 저장 완료')) {
+                try {
+                    const userIdMatch = value.match(/userId=sg\d+/);
+                    if (userIdMatch) {
+                        document.getElementById('userId').textContent = userIdMatch[0].replace('userId=', '');
+                    }
+                } catch (error) {
+                    document.getElementById('userId').textContent = 'Error parsing userId';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
